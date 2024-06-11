@@ -25,5 +25,5 @@ jobs:
         
       - name: Install dependencies
         run: |
-          yarn cache clean --all
+          yarn set version 1.22.22
           yarn install
