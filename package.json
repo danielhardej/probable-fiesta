@@ -1,0 +1,9 @@
+{
+  "name": "repro",
+  "private": true,
+  "version": "0.0.0",
+  "packageManager": "yarn@4.2.2",
+  "dependencies": {
+    "hello-world-npm": "1.1.1"
+  }
+}
