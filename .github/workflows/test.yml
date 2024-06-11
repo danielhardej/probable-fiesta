@@ -9,6 +9,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install corepack
+        run: |
+          npm uninstall -g yarn pnpm
+          npm install -g corepack
       
       - name: Enable corepack
         run: corepack enable
