@@ -2,7 +2,7 @@ name: Test
 
 on:
   push:
-  workflow_dispatch:
+  # workflow_dispatch:
 
 jobs:
   test:
@@ -10,9 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - run: corepack enable
-      - uses: actions/setup-node@v4
-        with:
-          cache: yarn
+      - name: Enable corepack
+        run: corepack enable
         
-      - run: npm install -g yarn
+      - name: Setup node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'yarn'
+        
+      - name: Install dependencies
+        run: yarn install --immutable
